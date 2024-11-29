@@ -1,0 +1,271 @@
+/* Style CSS pour la page */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Police de caractère */
+    background-color: #69C47D ; /* Fond vert pastel */
+    text-align: center; /* Centrer tout le texte */
+}
+
+.logo-title {
+    display: flex; /* Utilise un conteneur flex pour aligner les enfants horizontalement */
+    align-items: center; /* Aligne le logo et le titre verticalement au centre */
+}
+
+h1 {
+    font-size: 35px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+h1 span {
+    display: block; /* Force une nouvelle ligne */
+    font-size: 25px;
+    color: #555;
+}
+
+
+#site-logo {
+    width: 150px; /* Ajustez la taille du logo */
+    height: auto; /* Maintient les proportions du logo */
+    margin-right: 45px; /* Espacement entre le logo et le titre */
+}
+
+.navbar {
+    background-color: #69C47D; /* Couleur de fond vert pastel */
+    padding: 10px; /* Espacement intérieur */
+    text-align: center; /* Centrer le contenu de la barre */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Légère ombre pour un effet 3D */
+    margin-bottom: 20px; /* Ajoute un espace de 20px en dessous de la barre */
+    margin-top: 0; /* Supprime l’espace au-dessus */
+}
+
+
+.navbar-list {
+    list-style: none; /* Retire les puces */
+    margin: 0; /* Supprime les marges */
+    padding: 0; /* Supprime les espacements */
+    display: flex; /* Aligne les éléments en ligne */
+    justify-content: center; /* Centrer les éléments dans la barre */
+    gap: 15px; /* Espacement entre les éléments */
+    
+}
+
+.navbar-list li a {
+    text-decoration: none; /* Supprime le soulignement */
+    color: #69C47D ; /* Couleur du texte */
+    font-size: 1.3rem; /* Taille de la police */
+    font-weight: bold; /* Texte en gras */
+    padding: 8px 15px; /* Espacement intérieur */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s ease; /* Animation fluide pour le survol */
+    
+}
+
+.navbar-list li a:hover {
+    background-color: #e0fbe0; /* Couleur vert clair au survol */
+}
+
+
+
+.container {
+    max-width: 1200px; /* Largeur maximale du conteneur */
+    margin: 0 auto; /* Centrer horizontalement */
+    background-color: #FFFDD0; /* Fond blanc pour le contenu */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.navbar {
+    background-color: #FFFDD0; /* Rouge pour la barre de navigation */
+    padding: 10px; /* Espacement intérieur */
+    color: #69C47D; /* Couleur du texte */
+    text-align: center; /* Centrer le texte */
+}
+
+/* Style pour les titres */
+h1 {
+    margin: 20px 0; /* Espacement autour du titre */
+}
+
+/* Contenu des listes */
+ol {
+    display: inline-block; /* Centre la liste */
+    text-align: left; /* Aligne le texte à gauche */
+    padding: 0;
+}
+
+ol li {
+    list-style-type: upper-roman; /* Chiffres romains en majuscule */
+    margin: 10px 0; /* Espacement entre les éléments */
+}
+
+/* Conteneur pour la carte */
+#map-container {
+    width: 80%; /* Ajustement de la largeur */
+    max-width: 1200px;
+    height: 600px; /* Hauteur suffisante pour la carte */
+    margin: 0 auto 20px auto; /* Centre la carte horizontalement */
+    padding: 10px;
+    background-color:  #FFFDD0; /* Fond blanc */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Style pour la carte Leaflet */
+.leaflet-container {
+    width: 100%; /* La carte occupe toute la largeur */
+    height: 100%; /* La carte occupe toute la hauteur */
+}
+
+
+.titre {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #333;
+  }
+  .center-justify {
+    text-align: justify;   /* Justifie le texte */
+    text-align-last: center; /* Centre le dernier mot ou ligne */
+    margin: 0 auto;         /* Centrer le bloc de texte dans son conteneur */
+    width: 50%;             /* Définir une largeur pour que le texte soit bien centré */
+  }
+  
+  .text-section {
+    width: 90%; /* Largeur de 90% de l'écran, ajustez selon vos besoins */
+    max-width: 1200px; /* Largeur maximale de 1200px */
+    margin: 0 auto; /* Centrer horizontalement */
+    padding: 24px; /* Ajouter du padding pour l'espacement intérieur */
+    background-color: #FFFDD0; /* Fond blanc */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    text-align: justify; /* Justifier le texte */
+   
+    
+}
+
+
+#backToTop {
+    position: fixed; /* Reste visible même lorsqu'on fait défiler */
+    bottom: 20px; /* Distance du bas de l'écran */
+    right: 20px; /* Distance du côté droit */
+    background-color: #555; /* Couleur du bouton */
+    color: white; /* Couleur du texte */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: none; /* Le bouton est masqué par défaut */
+    z-index: 1000; /* Toujours au-dessus des autres éléments */
+}
+
+#backToTop:hover {
+    background-color: #333; /* Couleur plus foncée au survol */
+}
+
+
+.footer {
+    background-color: #FFFDD0; /* Code couleur pour crème */
+    color: #333; /* Couleur du texte */
+    padding: 20px; /* Espacement intérieur */
+    text-align: center; /* Centrer le texte */
+
+    footer details ul li a {
+        font-weight: normal !important;
+        text-decoration: none; /* Facultatif : enlever le soulignement */
+    }
+    
+
+footer a:hover {
+    text-decoration: underline; /* Optionnel pour améliorer l'UX */
+}
+footer a {
+    font-weight: normal !; /* Supprime le gras */
+    text-decoration: none; /* Facultatif : enlève le soulignement */
+    color: inherit; /* Facultatif : garde la couleur du texte environnant */
+}
+
+
+footer a, footer summary, footer ul, footer li {
+    footer a, footer summary, footer ul, footer li {
+        font-weight: normal !important; /* Enlève tout le gras */
+    }
+    
+    text-decoration: none;
+
+}
+
+footer a:hover {
+    text-decoration: underline; /* Optionnel pour améliorer l'UX */
+}
+footer details ul li a,
+footer details ul li {
+    font-weight: normal !important; /* Enlève le gras */
+}
+footer a {
+    font-weight: normal; /* Supprime le gras */
+    text-decoration: none; /* Facultatif : enlève le soulignement */
+    color: inherit; /* Facultatif : garde la couleur du texte environnant */
+}
+details a {
+    font-weight: normal; /* Supprime le gras */
+    text-decoration: none; /* Facultatif : enlève le soulignement */
+    color: inherit; /* Conserve la couleur du texte environnant */
+}
+
+details summary {
+    font-weight: normal; /* Supprime le gras du résumé */
+}
+footer .footer {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+}
+
+footer .footer a {
+    font-size: inherit !important;
+}
+
+footer .footer summary {
+    font-size: inherit !important;
+}
+}
+
+/* Style pour les sections d'accessibilité */
+.accessibility-section {
+    margin-top: 20px;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.accessibility-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.accessibility-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.accessibility-section ul li {
+    margin-bottom: 10px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0; /* Adjusts spacing around the video */
+}
+/* Augmenter l'interligne dans la section de contenu */
+.section-content {
+    line-height: 1.8; /* Ajuste la valeur selon tes préférences */
+    font-size: 16px; /* (Optionnel) Ajuste la taille de police si nécessaire */
+}
+
+
+

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="utf-8">
+    <title>Histoire de l'Afrique de l'Est Médiévale</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" crossorigin=""></script>
+    <script src="mespetitesfonctions.js" defer></script>
+
+</head>
+<body onload="loadLeafletMap();">
+
+    <header class="navbar">
+        <div class="logo-title">
+        <img src="logo site web.jpg" alt="Logo du site" id="site-logo">
+        <h1> L’Afrique orientale et l’Océan Indien : connexions, circulations, mutations (VIIe – XVIIe siècle)</h1>
+    </div>
+    </header>
+
+    <nav class="navbar">
+        <ul class="navbar-list">
+        <li>
+            <details>
+            <summary><a href="#Origines">Aux origines</a></summary>
+            <ul>
+                <li><a href="#La-notion-de-Moyen--Âge-africain">La notion de Moyen Âge africain</a></li>
+                <li><a href="#Le-problème-des-sources">Le problème des sources</a></li>
+                <li><a href="#Une-histoire-ancienne-de-la-côte-Est-Africaine">Une histoire ancienne de la côte Est-Africaine : naissance de la culture swahili</a></li>
+                <li><a href="#Premiers-sites-urbains-et-adoption-de-l-islam">Premiers sites urbains et adoption de l'islam</a></li>
+            </ul>
+        </details>
+    </li>
+    <li>
+        <details>
+            <summary><a href="#Expansion">Expansion et essor</a></summary>
+            <ul>
+                <li><a href="#Diffusion-et-approfondissement-de-l-islamisation">Diffusion et approfondissement de l'islamisation</a></li>
+                <li><a href="#Expansion-de-l-islam-sunnite-et-urbanisation">Expansion de l'islam sunnite et urbanisation</a></li>
+                <li><a href="#L-islam-sunnite-comme-marqueur-des-communautés-côtières">L'islam sunnite comme marqueur des communautés côtières</a></li>
+                <li><a href="#Multiplication-des-sites-urbains-et-essor-de-l-architecture-en-pierre">Multiplication des sites urbains et essor de l'architecture en pierre</a></li>
+                <li><a href="#Les-principales-cités-de-la-côte-est-africaine">Les principales cités de la côte est africaine entre le XIe et le XVe siècle</a></li>
+                <li><a href="#Apogée-de-Kilwa-et-le-règne-de-Hassan-bin-Sulaiman">Apogée de Kilwa et le règne de Hassan bin Sulaiman</a></li>
+                <li><a href="#La-concurrence-entre-Kilwa-Mombasa-et-Malindi">La concurrence entre Kilwa, Mombasa et Malindi</a></li>
+                <li><a href="#L-adoption-et-l-adaptation-de-l-islam">L’adoption et l’adaptation de l’islam</a></li>
+                <li><a href="#Le-processus-d-extraversion">Le processus d’extraversion (Paulo de Moraes Farias)</a></li>
+                <li><a href="#La-culture-islamique-comme-cadre-commun-favorisant-les-échanges-commerciaux">La culture islamique comme cadre commun favorisant les échanges commerciaux</a></li>
+                <li><a href="#L-islam-comme-outil-de-légitimation-et-d-unification">L’islam comme outil de légitimation et d’unification</a></li>
+                <li><a href="#Le-monde-Swahili-:-une-culture-islamique-originale-et-hétérogène">Le monde Swahili : une culture islamique originale et hétérogène</a></li>
+                <li><a href="#La-culture-des-cités-États-Swahilis">La culture des cités-États Swahilis</a></li>
+            </ul>
+        </details>
+    </li>
+    <li>
+        <details>
+            <summary><a href="#Mythes">Écriture de l'histoire</a></summary>
+            <ul>
+                <li><a href="#La-mise-en-récit-d-origines-fictives">La mise en récit d'origines fictives : la culture écrite</a></li>
+                <li><a href="#La-tradition-orale">La tradition orale</a></li>
+                <li><a href="#Exemple-de-la-chronique-de-Kilwa-et-du-mythe-Shirazi">Exemple de la chronique de Kilwa et du mythe Shirazi : la légende des fondateurs persans</a></li>
+                <li><a href="#D-autres-récits-et-origines-légendaires">D’autres récits et origines légendaires</a></li>
+                <li><a href="#À-quoi-servent-les-mythes-?">À quoi servent les mythes ? Contexte de production et légitimation par le récit narratif</a></li>
+                <li><a href="#Prestige-généalogique-et-légitimité-islamique">Prestige généalogique et légitimité islamique</a></li>
+            </ul>
+        </details>
+            </li>
+    <li>
+        <details>
+            <summary><a href="#Portugal">Les Swahilis et l'Empire Portugais</a></summary>
+            <ul>
+                <li><a href="#Contexte-des-Villes-de-la-Côte-Swahili">Contexte des Villes de la Côte Swahili au XVe Siècle</a></li>
+                <li><a href="#L-Expansion-Portugaise-le-Long-de-la-Côte-Est-Africaine">L’Expansion Portugaise le Long de la Côte Est Africaine</a></li>
+                <li><a href="#Les-motivations-des-Portugais">Les motivations des Portugais</a></li>
+                <li><a href="#Difficultés-rencontrées-par-les-Portugais-en-Afrique">Difficultés rencontrées par les Portugais en Afrique</a></li>
+                <li><a href="#Reconfiguration-des-Réseaux-Commerciaux">Reconfiguration des Réseaux Commerciaux</a></li>
+                <li><a href="#L-Empire-Portugais-dans-l-Océan-Indien">L'Empire Portugais dans l’Océan Indien : 1500-1631</a></li>
+                <li><a href="#Le-Système-de-Forteresse-Factorerie">Le Système de Forteresse Factorerie</a></li>
+                <li><a href="#La-Résistance-des-Cités-Swahilis">La Résistance des Cités Swahilis</a></li>
+                <li><a href="#La-Fragilité-de-l-Empire-Portugais">La Fragilité de l’Empire Portugais</a></li>
+                <li><a href="#Une-Présence-Portugaise-Nuancée">Une Présence Portugaise Nuancée</a></li>
+                <li><a href="#La-stratégie-portugaise">La stratégie portugaise : menace militaire et exploitation des rivalités locales</a></li>
+                <li><a href="#Les-limites-d-une-domination">Les limites d’une domination</a></li>
+                <li><a href="#La-chute-de-l-empire-portugais-sur-la-côte-est-africaine">La chute de l’empire portugais sur la côte est africaine</a></li>
+                </ul>
+            </details>
+            </li>
+
+            <li>
+                <details>
+                    <summary><a href="#Zimbabwe">Histoire du Zimbabwe</a></summary>
+                    <ul>
+                        <li><a href="#L-essor-des-échanges-et-l-apparition-de-foyers-concentrant-population-et-pouvoir">L’essor des échanges et l’apparition de foyers concentrant population et pouvoir (VIIe-XIIe siècle)</a></li>
+                        <li><a href="#Le-site-de-Mapungubwe">Le site de Grand Zimbabwe : capitale monumentale d’un royaume de l’intérieur (XIIIe-XVe siècle)</a></li>
+                        <li><a href="#Le-site-de-Grand-Zimbabwe">Le site de Mapungubwe : Afrique du Sud (XIIe-XIIIe siècle) - Apparition d’une stratification sociale marquée</a></li>
+                        <li><a href="#Les-connexions-très-lointaines-du-Grand-Zimbabwe">Les connexions très lointaines du Grand Zimbabwe : la théière chinoise</a></li>
+                        <li><a href="#La-résidence-d-élites-aux-fonctions-politico-rituelles">La résidence d’élites aux fonctions politico-rituelles</a></li>
+                        <li><a href="#L-essor-du-royaume-de-Monomotapa-:-Mutapa">L’essor du royaume de Monomotapa : Mutapa</a></li>
+                        
+                    <ul>
+                    </details>
+                    </li>
+
+                    <li><a href="#Bonus">Bonus</a></li>
+                    
+
+</ul>
+</nav>
+
+    <!-- Conteneur pour la carte -->
+    <div id="map-container">
+        <div id="map" class="leaflet-container"></div>
+    </div>
+
+    <!-- Sections de contenu -->
+    <section class="section-content">
+    <div class="text-section">
+    <h2 id="Origines">Aux origines de la culture swahilie</h2>
+    <p>Lorsque l'on étudie l’histoire de l'Afrique orientale à l’époque médiévale et que l'on s'intéresse aux origines de la culture swahilie, plusieurs points sont à prendre en compte. D’abord, la question de l’essor des échanges entre ces sociétés subsahariennes et le reste du monde. Ensuite, il est essentiel de se pencher sur les sources qui relatent les événements marquants de cette période et de cet espace géographique, qui s'étend du Sud de la Somalie, longe la côte du Kenya et celle du Mozambique, jusqu’au Zimbabwe, en incluant les Comores et la pointe nord de l’île de Madagascar.
+        Il est aussi primordial de s'interroger sur le rôle des acteurs historiques africains dans l’instauration et la conduite de ces échanges. Pourquoi et comment se mettent en place des échanges à longue distance et comment évoluent-ils ? En Afrique de l’Est, les routes sont principalement maritimes. Ces échanges commerciaux entraînent l’arrivée de nouvelles idées, techniques, savoirs et d'une nouvelle religion : l’islam. Nous explorerons l’expansion de l’islam sur les côtes est-africaines, en nous interrogeant sur les raisons de son adoption par les sociétés africaines et sur les facteurs qui ont facilité sa diffusion.
+        Nous nous intéressons également aux phénomènes urbains qui se développent sur les côtes de l'Afrique de l’Est. Pourquoi et comment se concentre le commerce sur certains foyers ? Nous verrons l’apparition de cités-états sur la côte swahilie. Avec l’urbanisation et le commerce, la hiérarchie sociale émerge également. Comment ces hiérarchies se construisent-elles et comment se renforcent-elles sous l’effet de l’essor du commerce, des échanges, de l’ouverture au monde et de l’importation d’esclaves ?
+        Nous étudierons aussi la question de l’expansion européenne à travers la présence portugaise sur la côte Est-Africaine aux XVIe et XVIIe siècle, en abordant les thèmes de cette expansion complexe et hétérogène. Dans la vallée du Zambèze, les Portugais pénètrent l’intérieur, mais ce n’est pas un colonat. L’empire portugais se dissout dans des modèles économiques et sociaux locaux. Le terme "africanisation" des systèmes portugais s’impose alors. Nous nous interrogerons sur les sources de cette histoire : quels problèmes posent-elles pour l’écriture de l’histoire chez les Swahili ?
+        <h3 id="La-notion-de-Moyen--Âge-africain">La notion de Moyen Âge africain</h3>
+        La notion de "Moyen Âge africain" est calquée sur celle du Moyen Âge en Occident chrétien. Le commencement de ce Moyen Âge est situé vers le VIIIe siècle avec les premiers contacts avec l’islam, aussi bien en Afrique de l’Ouest qu’en Afrique de l’Est. La fin de cette période est souvent datée autour du voyage de Vasco de Gama ou de la chute de l’empire Songhay en 1591, à la suite de l’invasion d’une armée marocaine. Cette notion pose plusieurs questions. Si l’on suit ces dates pour définir le Moyen Âge africain, cela coïncide avec le Moyen Âge en Occident chrétien, ce qui suggère une rupture entre chaque période. Toutefois, l’histoire sur chaque continent évolue différemment, ce qui remet en question la pertinence de ces dates pour découper cette période historique.
+Les débats qui entourent cette notion ont une fonction heuristique (qui favorise la réflexion). Réfléchir sur le "Moyen Âge africain" permet d'intégrer l’Afrique dans l’histoire globale des Moyen Âges (occidental, islamique), et de comprendre comment ces périodes se connectent.
+<h3 id="Le-problème-des-sources">Le problème des sources</h3>
+Le Moyen Âge africain repose sur deux choses principales : d’abord, un régime documentaire spécifique. Avant les XVe et XVIe siècles, les sources sont souvent lacunaires et ambiguës, ce qui empêche de construire une trame narrative continue. Ensuite, il y a l’intégration du continent à des phénomènes globaux. À partir des VIIe et VIIIe siècles, certaines régions du continent s'arriment à des phénomènes mondiaux, comme les réseaux musulmans qui s’étendent le long de la mer Rouge et entrent en contact avec la côte est-africaine, contrairement à d'autres zones du continent, moins connectées.
+Les principales sources sont l'archéologie, les paléo-sciences, ainsi que les sources historiques écrites ou orales. Parmi les sources écrites, on trouve la géographie arabe médiévale, des textes géographiques produits dans l’Occident chrétien, des récits de voyage, et à partir des années 1430-1440, des sources portugaises, suite à l’arrivée des Portugais au Sénégal. Les sources orales, bien que très anciennes et difficiles à utiliser, permettent de remonter jusqu’au XIIIe siècle. Ce sont souvent des récits collectifs transmis de génération en génération.
+Le problème majeur pour définir l’Afrique médiévale avant le XVIe siècle est le faible nombre de sources écrites. Toutefois, sur les côtes, on trouve davantage de sources dès le XVe siècle avec la présence portugaise. 80 % de l'Afrique subsaharienne restait ignorée des témoins européens. Les descriptions des Européens concernaient principalement les zones en contact avec les réseaux commerciaux.
+Le monde musulman, quant à lui, produit des sources sur la géographie et le commerce, ce qui entraîne un biais. Avant le XVIe siècle, la majorité des sources proviennent d'agents extérieurs. Cela est dû au fait que l’écriture était absente dans de nombreuses sociétés subsahariennes, comme celle du royaume du Kongo, où l’écrit était réservé à certaines élites, et n’était pas utilisé pour raconter le passé ou des événements géographiques.
+<h3 id="Une-histoire-ancienne-de-la-côte-Est-Africaine">Une histoire ancienne de la côte Est-Africaine : naissance de la culture swahili</h3>
+Deux espaces de l’Afrique orientale ont été façonnés par les échanges avec l’océan Indien : la côte swahilie (du sud de la Somalie à la côte du Kenya, de la Tanzanie et l'archipel de Zanzibar, ainsi qu’une partie de la côte du Mozambique, les Comores et le nord de Madagascar). Ce lieu est marqué par une unité culturelle littorale, émergente dès le VIIIe siècle, et que l’historiographie nomme culture swahili. Le terme "swahili" repose sur la même racine arabe que "sahel", signifiant un rivage associé au commerce. Cette culture se développe sur les bords de l’océan Indien, notamment par la création de villes caravanières.
+Les premiers habitants de la côte étaient principalement des agriculteurs, pratiquant la métallurgie du fer, parlant des langues bantoues, et ayant un mode de vie similaire à celui des populations de l’intérieur du continent. Ils ne possédaient pas d'État, ni de grandes villes. Les premières traces d’une société plus complexe apparaissent au VIIIe siècle avec l’urbanisation progressive et la multiplication des villages côtiers, qui deviennent plus pérennes et se transforment en villes commerçantes.
+<h3 id="Premiers-sites-urbains-et-adoption-de-l-islam">Premiers sites urbains et adoption de l'islam</h3>
+Le tournant historique pour ces sociétés intervient au milieu du VIIIe siècle. La concentration des populations sur des sites permanents et densément peuplés marque l’apparition de l’urbanisation. Ces transformations sont liées aux échanges avec des marchands du Golfe persique, région liée aux califats musulmans. La plus ancienne trace d’islam en Afrique de l'Est a été retrouvée dans l’archipel de Lamu, au nord du Kenya. D’autres sites comme celui de Shanga montrent l’implantation de l’islam dès le IXe siècle. Les traces matérielles d'échanges et l’apparition de mosquées et de tombes témoignent de la diffusion progressive de la religion sur la côte.
+         </p>
+
+    <h2 id="Expansion">Expansion et essor de la culture swahilie</h2>
+    <p>
+       <h3 id="Diffusion-et-approfondissement-de-l-islamisation">Diffusion et approfondissement de l'islamisation</h3> 
+       C'est entre les XIe et XIIe siècles que la culture swahilie se structure de manière plus marquée le long de la côte est africaine, au moment où l'islam devient prédominant parmi les populations. Jusque-là, de petites communautés musulmanes étaient présentes, mais avec la multiplication des mosquées, l'islam s'est progressivement imposé, faisant de la majorité de la population des musulmans. La période allant du XIIe au XVe siècle est souvent considérée comme un "âge d'or" pour la culture swahili, marquée par la multiplication des sites urbains, le développement des échanges et l'émergence d'une architecture en pierre.
+       <h3 id="Expansion-de-l-islam-sunnite-et-urbanisation">Expansion de l'islam sunnite et urbanisation</h3>
+       Au XIe et XIIe siècle, l'expansion de l'islam a également favorisé la domination du sunnisme et le développement des sites urbains. Avant cette époque, les contacts avec l'empire abbasside étaient relativement limités. À partir du XIIe siècle, cependant, la zone commerciale se déplace de la péninsule arabique vers la mer Rouge, l'Égypte et le Yémen. Ce changement est lié à la décadence des Abbassides et à la montée en puissance de nouveaux centres commerciaux dans la région, comme la ville d'Aden, qui connaît un essor au XIIIe siècle. La prospérité des Mamelouks d'Égypte et la croissance des échanges commerciaux mondiaux au cours de cette période stimulent le commerce à travers la mer Rouge, vers le Yémen et l'Afrique orientale. Ces dynamiques auront des répercussions importantes sur la côte est africaine
+       <h3 id="L-islam-sunnite-comme-marqueur-des-communautés-côtières">L'islam sunnite comme marqueur des communautés côtières</h3>
+       Au fil des siècles, trois branches de l'islam se sont implantées sur la côte est africaine : le sunnisme, le chiisme et le kharidjisme. Cependant, c'est l'islam sunnite, et plus spécifiquement le sunnisme chafiite, qui est devenu prédominant, comme le décrit Ibn Battuta dans les années 1330. Des traces de l'influence chiite existent, mais elles disparaissent au cours du XIIIe siècle.
+       <h3 id="Multiplication-des-sites-urbains-et-essor-de-l-architecture-en-pierre">Multiplication des sites urbains et essor de l'architecture en pierre</h3>
+       Au XIe siècle, l'islam devient la religion dominante dans les villes côtières. Parallèlement, ces agglomérations connaissent une forte croissance, particulièrement entre le XIe et le XIIIe siècle, avec l'apparition de nouveaux sites urbains le long de la côte. Certains sites, comme Kilwa, Manda et Gedi, se distinguent par leur taille et la qualité de leur architecture en pierre. Ces villes sont souvent peuplées de plusieurs milliers d'habitants et comptent de nombreuses constructions en pierre, notamment des mosquées. D'autres villages, plus modestes, se composent de quelques centaines d'habitants et possèdent généralement une mosquée en pierre. Les communautés de cette région sont en grande majorité côtières, bien que des exceptions existent le long du fleuve Zambèze.
+       <h3 id="Les-principales-cités-de-la-côte-est-africaine">Les principales cités de la côte est africaine entre le XIe et le XVe siècle</h3>
+       Les villes de la côte est africaine sont des centres commerciaux dynamiques, attirant des marchands arabes, persans, indiens et africains. Parmi les plus importantes, Mogadiscio et Kilwa se distinguent. Mogadiscio, par exemple, domine le commerce entre le XIe et le XIVe siècle, avec des échanges réguliers entre la côte et des ports comme Aden. Les produits transitant par la ville comprennent l'ivoire, le bois d'ébène et les esclaves, et des archives montrent un commerce intense avec le Yémen et au-delà.
+       <h3 id="Apogée-de-Kilwa-et-le-règne-de-Hassan-bin-Sulaiman">Apogée de Kilwa et le règne de Hassan bin Sulaiman</h3>
+       Kilwa connaît son apogée sous le règne du sultan Hassan bin Sulaiman (1310-1335), au XIVe et XVe siècle. Ce dernier est connu pour ses grandes réalisations architecturales, notamment l'agrandissement de la mosquée de Kilwa et la construction du palais de Husuni Kubwa. Durant cette période, Kilwa établit un monopole sur le commerce de l'or, en particulier en contrôlant le port de Sofala au sud. Les échanges entre Kilwa et d'autres régions prospèrent, soutenus par un climat favorable et une forte demande mondiale en or, notamment en raison de la prospérité du Mali et du Zimbabwe.
+       <h3 id="La-concurrence-entre-Kilwa-Mombasa-et-Malindi">La concurrence entre Kilwa, Mombasa et Malindi</h3>
+       Au XVe siècle, la côte est africaine est dominée par trois cités commerciales majeures : Kilwa, Mombasa et Malindi. Ces cités, bien que puissantes, sont en concurrence constante, notamment Mombasa et Malindi pour le contrôle des routes commerciales le long de la côte kenyane. Lors de l'arrivée des Portugais au début du XVIe siècle, ces cités sont les principaux centres commerciaux de la région.
+       <h3 id="L-adoption-et-l-adaptation-de-l-islam">L’adoption et l’adaptation de l’islam</h3>
+       L’islam s'est diffusé dans l’océan Indien jusqu’en Asie du Sud-Est, sans conquête arabe, principalement par le biais du commerce maritime. Cette diffusion a été facilitée par des marchands arabes, berbères et persans. Par exemple, un sultanat a existé sur l’île de Sumatra, montrant une présence islamique dans cette région. Sur la côte est de l’Afrique, l’islam semble avoir été porté par des musulmans originaires du nord de la côte, notamment les Swahili eux-mêmes.
+       <h3 id="Le-processus-d-extraversion">Le processus d’extraversion (Paulo de Moraes Farias)</h3>
+       L’historien et africaniste brésilien Paulo de Moraes Farias a publié en 2003 un ouvrage centré sur le royaume de Gao/Songhay, un ancien site archéologique fondé autour du VIe siècle, où l’islam a été adopté vers l’an mille. Selon lui, il est préférable de parler d’"adoption" ou d’"appropriation" de l’islam, plutôt que de "conversion". En effet, "conversion" suggère un passage brutal d’une religion à une autre, tandis que l’adoption évoque un processus plus long où l’islam s’intègre à des pratiques et croyances locales sans rupture nette.
+Farias utilise la notion de "processus d’extraversion" pour décrire un emprunt volontaire d’éléments extérieurs, sans imposition. Ce processus permet aux sociétés africaines de s'approprier des éléments de l'islam à leur propre profit. L’islam, en tant que véhicule de la mondialisation, sert à relier les sociétés à un monde plus vaste, incarné par des éléments comme le calendrier hégirien, un moyen pour les peuples locaux de se rattacher à l’histoire de l’islam et de vivre dans un temps partagé universellement par les musulmans. L’adoption de l’islam peut ainsi prendre plusieurs générations.
+<h3 id="La-culture-islamique-comme-cadre-commun-favorisant-les-échanges-commerciaux">La culture islamique comme cadre commun favorisant les échanges commerciaux</h3>
+L’islam a joué un rôle fondamental dans les échanges commerciaux sur la côte est de l’Afrique. Il a permis de rapprocher des marchands de milieux sociaux différents, facilitant les échanges avec un monde plus vaste. L’islam, en fournissant des codes et des référentiels culturels communs, a permis d’établir des relations de confiance entre commerçants d’horizons variés, renforcées par la notion d’umma.
+L’islam a aussi apporté un cadre juridique commun, notamment la charia, qui a facilité le commerce en fournissant un système légal auquel les marchands pouvaient se référer. De plus, la langue arabe est devenue un outil de communication, non pour remplacer les langues locales, mais comme langue véhiculaire, notamment parmi les élites. Cela a permis de connecter les Swahili aux marchands étrangers sans qu'il y ait une arabisation complète des populations.
+L’adoption de la culture islamique a aussi permis de partager des éléments matériels et culturels communs, comme l’architecture, le vêtement (ex. : turbans), l’alimentation (ex. : riz, épices) et des objets comme la porcelaine chinoise. Ces éléments témoignent de l’interconnexion culturelle dans le bassin de l’océan Indien.
+<h3 id="L-islam-comme-outil-de-légitimation-et-d-unification">L’islam comme outil de légitimation et d’unification</h3>
+Au sein des sociétés côtières, l’islam a servi non seulement à renforcer les relations commerciales avec l’extérieur, mais aussi à renforcer la position sociale des élites locales. L’adoption de l’islam a permis à ces élites de se présenter comme les détenteurs d’un savoir sacré et de légitimer leur pouvoir. Les villes côtières, comme Kilwa, sont vues comme des foyers de civilisation, distinguant les Swahili de leurs voisins non musulmans, souvent perçus comme "barbares".
+<h3 id="Le-monde-Swahili-:-une-culture-islamique-originale-et-hétérogène">Le monde Swahili : une culture islamique originale et hétérogène</h3>
+L’islam, en particulier le sunnisme, est devenu majoritaire dans le monde Swahili autour du XIIIe siècle. Cependant, il est probable que l’islam ne se soit pas adapté de manière homogène, selon les groupes sociaux et les époques. On observe, par exemple, la persistance de croyances locales liées aux esprits, qui ont été islamisées au fil du temps, comme les djinns et les shaytans.
+Des traces de syncrétisme sont aussi visibles dans les pratiques funéraires et la décoration des tombes, comme en témoignent des découvertes archéologiques de perles dans des sépultures. Ce syncrétisme reflète l’adaptation de l’islam aux pratiques locales.
+L’architecture Swahili, en dépit de son influence islamique, se distingue des modèles du Moyen-Orient, témoignant d’une réinterprétation locale des formes islamiques. De plus, des objets comme les trompes en ivoire (siwa), symboles de pouvoir, montrent un mélange entre la culture islamique et les traditions africaines.
+La culture Swahili est ainsi une culture africaine islamisée, ni homogène ni statique, en constante évolution. Cette culture intègre des influences islamiques du Moyen-Orient tout en restant profondément marquée par les traditions africaines locales. Elle se distingue par des spécificités régionales, comme en témoigne la diversité des pratiques culturelles aux Comores, où la langue est différente du Swahili.
+<h3 id="La-culture-des-cités-États-Swahilis">La culture des cités-États Swahilis</h3>
+Le modèle des cités-États est central dans la culture Swahili. Ces cités étaient organisées autour de centres urbains et de territoires agricoles. La région Swahili a toujours été marquée par une organisation politique fragmentée, composée de micro-états indépendants ou autonomes, centrés sur des agglomérations urbaines importantes. Les cités étaient souvent en rivalité, mais elles entretenaient aussi des liens culturels et commerciaux forts.
+L’organisation des cités-États Swahili est caractérisée par une forte autonomie locale, mais également par un réseau d’échanges permanent avec d’autres cités, aussi bien à travers des routes maritimes que terrestres. Cette structure a permis aux Swahilis de maintenir une position dominante dans les échanges commerciaux, tout en conservant un contrôle sur leur arrière-pays et les ressources qu’il fournissait.
+Ces cités-États ont aussi une dimension symbolique forte. La ville est perçue comme le centre de la civilisation et de l’islam, une distinction marquée par rapport aux sociétés rurales voisines. Ainsi, dans les récits historiques, comme le mythe fondateur de Kilwa, la ville est présentée comme débarrassée de la "barbarie", soulignant l'importance de l’islam et de l’urbanité comme éléments de distinction.
+Enfin, le modèle des cités-États Swahili, comparable à d’autres exemples de cultures similaires, comme celles des Grecs ou des Mayas, reflète une organisation sociale où chaque cité est à la fois un territoire et une communauté. Les cités étaient dirigées par des chefs de clans, parfois avec un sultan, mais le pouvoir restait partagé et négocié.
+
+    </p>
+
+    <h2 id="Mythes">Écriture de l'histoire</h2>
+    <p>La question centrale de cette partie est : comment les Swahilis mettent-ils en récit leur passé et pourquoi le font-ils ?
+        Lorsque les Portugais arrivent sur la côte, ils appellent les habitants de la côte les Maures : les musulmans. Ils précisent la zone géographique en disant « pays de Sawahil ». Ils mentionnent les habitants de la côte en tant que musulmans de la côte, par opposition aux Maures d’Arabie, afin de montrer la distinction entre les deux.
+        Pour eux, sur la côte, il y a des musulmans, et dans l’arrière-pays, il y a des païens. On a des textes d’érudits portugais qui s’intéressent à expliquer l’histoire de la côte. Selon eux, les Swahilis seraient les descendants de colons arabes et persans établis sur la côte, qui se seraient mélangés avec les Africains. Ils considèrent les musulmans comme civilisés et les païens comme barbares. Les Portugais vont ainsi rattacher les Swahilis au monde arabe, une vision qui va perdurer jusque dans les années 1970 dans l’historiographie.
+        Cette dichotomie frappante repose sur les récits produits par les Swahilis eux-mêmes. Ces mythes expliquent de façon systématique que des villes, des cités et des dynasties de la côte Est africaine auraient été fondées par des étrangers venus de Perse et d’Arabie. Ces textes sont des sortes de chartes ayant pour fonction d’expliquer et de légitimer un ordre social et politique, les mythes de fondation.
+        Quand ces récits ont été déconstruits, l’histoire du monde swahili a été reconsidérée. Il n’y a pas de fondation par des étrangers, car en réalité, la culture swahilie avait avant tout des racines africaines.
+        <h3 id="La-mise-en-récit-d-origines-fictives">La mise en récit d'origines fictives : la culture écrite</h3>
+        Avant le XIXe siècle, l’écrit n’était pas utilisé pour les récits du passé. Toutes les chroniques ont été produites après le XIXe siècle, sauf la chronique de Kilwa, composée en arabe vers 1520 et mentionnée par un manuscrit de João de Barros, un chroniqueur portugais ayant produit une chronique de l’expansion portugaise. Il avait une curiosité pour l’Est africain et était informé de la chronique de Kilwa rédigée en arabe. Il rapporte que dans cette chronique figure la liste des rois de Kilwa.
+        On en a une version de 1867, mais en dehors de cette chronique, aucune autre chronique n’a été mise par écrit avant le XIXe siècle. Ce phénomène n’est pas unique aux Swahilis ; dans les sociétés où la tradition orale est dominante, l’écriture est utilisée pour d’autres fonctions et non pour la production de récits historiques. Dans ces sociétés, on est dans un contexte que Jack Goody qualifie de « restricted literacy », où l’écrit cohabite avec l’oral, mais l’écrit est réservé à certains domaines (religion, commerce, épigraphie, diplomatie), tandis que l’oral reste le moyen principal pour transmettre le passé.
+<h3 id="La-tradition-orale">la tradition orale</h3>     
+Les sources liées à la tradition orale sont essentiellement des récits narratifs qui évoquent le passé transmis oralement de génération en génération. Ces récits peuvent être racontés ou chantés et sont collectivement construits, appartenant à la communauté. Ils peuvent être transmis de manière formelle par des spécialistes de la tradition orale, ou plus informellement de génération en génération. La tradition orale n’est pas figée dans le temps ; elle évolue et change selon les époques
+<h3 id="Exemple-de-la-chronique-de-Kilwa-et-du-mythe-Shirazi">Exemple de la chronique de Kilwa et du mythe Shirazi : la légende des fondateurs persans</h3>   
+La chronique de Kilwa, la plus célèbre des chroniques et des mythes de fondation, est connue grâce à João de Barros, qui a eu accès à un manuscrit arabe du XVIe siècle. Elle raconte que la ville de Kilwa aurait été fondée par le sultan d’une ville en Perse nommée Shiraz (aujourd’hui en Iran). L’un des fils du sultan de Shiraz serait arrivé sur l’île de Kilwa, où l’islam était présent mais menacé par des païens de l’arrière-pays. Il aurait acheté l’île contre des tissus, fondant ainsi la cité sur ce territoire insulaire.
+<h3 id="D-autres-récits-et-origines-légendaires">D’autres récits et origines légendaires</h3>
+Une autre chronique connue est celle de Paté, une vieille ville fondée au IXe siècle, prospère au XVIIe et XVIIIe siècle, et la plus puissante du monde swahili à l’époque. Cette chronique, mise par écrit au XXe siècle, raconte l’histoire de la dynastie Nabahani qui a régné sur Paté et ses alentours jusqu’en 1890. Selon cette chronique, les Nabahani sont un clan omanais qui, après un exil, fonde le sultanat de Paté vers 600-601 de l’hégire. Le personnage fondateur se marie avec la fille du chef local, leur fils devenant le premier sultan. Cette histoire, bien que considérée comme une légende aujourd’hui, montre comment les mythes de fondation peuvent se rattacher à des dynasties réelles ou semi-réelles.
+D’autres sultans se sont prétendus descendants des califes omeyyades et abbassides, ou même de la Mecque, tandis que certaines lignées swahilis, comme celle de Zanzibar, se réclament des Yéménites, des Hadramis, ou des Shirazi.
+<h3 id="À-quoi-servent-les-mythes-?">À quoi servent les mythes ? Contexte de production et légitimation par le récit narratif</h3>
+Les chroniques sont souvent des récits composites, mêlant des matériaux variés, comme des événements réels ou fictifs, des récits empruntés au Coran ou au folklore arabe, ou encore des histoires issues des Mille et Une Nuits. Par exemple, le mythe de Kilwa sert à légitimer la position des Swahilis en les rattachant à des origines prestigieuses, mais aussi à décrire leur rôle d’intermédiaire entre l’Océan Indien et l’Islam. Les récits de fondation aident à montrer que la cité de Kilwa est sous la protection divine et qu’elle fait partie du Dar al-Islam, en opposition avec l’arrière-pays non islamisé et considéré comme « barbare ».
+<h3 id="Prestige-généalogique-et-légitimité-islamique">Prestige généalogique et légitimité islamique</h3>
+Ces récits sont produits pour légitimer un pouvoir, une royauté ou une communauté, souvent dans des contextes politiques troublés ou menaçants. Par exemple, le mythe de fondation de Kilwa vise à montrer que la ville est non seulement d’origine persane et liée au prestige islamique, mais aussi qu’elle défend une position d’intermédiaire entre l’Océan Indien et l’Islam, face aux incursions d’autres groupes, comme les Yéménites. Ces récits permettent ainsi de définir le bon souverain, un modèle de vertu, et de fixer les principes d’un bon gouvernement, souvent par l’exemple de sultans passés.
+Les mythes de fondation et les chroniques sont donc des témoignages sur l’époque de leur production et révèlent comment l’histoire et le passé sont manipulés pour défendre des positions sociales et politiques spécifiques à un moment donné.
+Ainsi, ces mythes et chroniques ne sont pas seulement des récits fictifs, mais des outils de légitimation et de défense des structures politiques et sociales. En croisant les sources, on peut parfois retracer des événements réels, bien que certaines exagérations et interpolations rendent ces récits difficilement objectifs, surtout lorsqu’ils remontent à des périodes plus anciennes. Cependant, ils offrent un aperçu précieux de la manière dont l’histoire est construite pour servir des intérêts politiques et sociaux particuliers.
+
+    </p>
+
+    <h2 id="Portugal">Les Swahilis et l'Empire Portugais</h2>
+    <p>En 1498, lors du voyage de Vasco de Gama, les Portugais font leur première incursion dans l’Océan Indien en passant par la côte swahilie, afin de se rendre en Inde. Ce contact avec la côte Est-africaine marque le début de l’implantation portugaise en Afrique.
+        <h3 id="Contexte-des-Villes-de-la-Côte-Swahili">Contexte des Villes de la Côte Swahili au XVe Siècle</h3>
+        À leur arrivée, des villes telles que Mogadiscio et Mombasa sont déjà puissantes, ayant prospéré au cours du XVe siècle. Elles contrôlent une vaste zone s’étendant du sud du Kenya au nord de la Tanzanie, et ont vassalisé les petites cités environnantes. Kilwa, une autre ville importante, exerce une influence politique sur Mozambique et Sofala au sud, contrôlant le commerce de l’or et imposant des taxes. Enfin, Malindi, située au nord de Mombasa, est en concurrence avec cette dernière, politiquement et commercialement. Les Portugais jouent de cette rivalité pour établir leur influence.
+        <h3 id="L-Expansion-Portugaise-le-Long-de-la-Côte-Est-Africaine">L’Expansion Portugaise le Long de la Côte Est Africaine</h3>
+        L’expansion portugaise le long des côtes africaines se déroule progressivement. Après leur arrivée en 1444 sur la côte sud du Maroc, les Portugais entrent en contact avec des royaumes subsahariens, principalement musulmans. Leur objectif initial est économique : la recherche d’or, d’esclaves et d’autres produits. Ils savent qu’au sud du Sahara, ces ressources sont abondantes, informations circulant depuis l’apogée de l’Empire du Mali et via des réseaux marchands juifs à travers la Méditerranée.
+<h3 id="Les-motivations-des-Portugais"> Les motivations des Portugais</h3>
+Les motivations des Portugais sont multiples : économiques (accès aux ressources et au commerce) et religieuses (lutte contre l’islam et la reconquête de Jérusalem). À la fin du XVe siècle, l’expansion portugaise devient un projet de la couronne, marquée par l’idée médiévale de croisade. Cependant, bien que leur présence en Afrique de l’Ouest au XVIe siècle soit limitée à quelques comptoirs, comme Saint Jean de la Mine ou Luanda, leur contrôle des routes maritimes reste incontesté.
+<h3 id="Difficultés-rencontrées-par-les-Portugais-en-Afrique">Difficultés rencontrées par les Portugais en Afrique</h3>
+Bien que les sociétés côtières africaines accueillent initialement les Portugais comme nouveaux partenaires commerciaux, ces derniers se heurtent rapidement à une forte résistance, notamment en raison des maladies qui déciment leurs troupes. Conscients des difficultés liées à l’établissement dans l’intérieur du continent, les Portugais se contenteront finalement de se concentrer sur la côte, où les réseaux commerciaux sont déjà bien établis.
+<h3 id="Reconfiguration-des-Réseaux-Commerciaux">Reconfiguration des Réseaux Commerciaux</h3>
+Lorsqu’ils arrivent en Inde, les Portugais comprennent que la côte est africaine est cruciale pour le commerce des esclaves et des ressources destinées à ravitailler les navires se rendant en Inde. La présence portugaise, bien que limitée, interagit avec des réseaux commerciaux existants, notamment les échanges en or, tout en introduisant des éléments de violence et de domination.
+<h3 id="L-Empire-Portugais-dans-l-Océan-Indien">L'Empire Portugais dans l’Océan Indien : 1500-1631</h3>
+L’objectif principal des Portugais est de contrôler le commerce et d’imposer la suzeraineté du Portugal dans l’Océan Indien, créant un réseau de forteresses et de factoreries entre 1502 et 1520. Leur présence se renforce avec l’établissement de comptoirs à Goa (1530), marquée par un système de forteresses et de communautés marchandes portugaises reliées par des routes maritimes.
+<h3 id="Le-Système-de-Forteresse-Factorerie">Le Système de Forteresse Factorerie</h3>
+Les forteresses factorerie sont le modèle principal d’établissement portugais en Afrique de l'Est. Ces entrepôts commerciaux militaires, tels que ceux de Kilwa et Sofala, sont protégés par des murailles et des canons, et occupés par des agents commerciaux et des garnisons militaires. Ces forteresses permettent aux Portugais de dominer les routes commerciales, notamment celles de l’or et des épices, tout en établissant des alliances avec des royaumes locaux.
+<h3 id="La-Résistance-des-Cités-Swahilis">La Résistance des Cités Swahilis</h3>
+Mombasa et d’autres cités résistent fermement à la domination portugaise. Toutefois, la situation change entre 1585 et 1590 lorsque le sultan de Malindi soutient une flotte ottomane contre les Portugais, ce qui permet à Mombasa de tomber sous le contrôle de Malindi. Les Portugais établirent plus tard un fort à Mombasa, appelé Fort Jésus, consolidant ainsi leur contrôle sur la région.
+<h3 id="La-Fragilité-de-l-Empire-Portugais">La Fragilité de l’Empire Portugais</h3>
+Bien que les Portugais cherchent à imposer leur domination impériale, ils rencontrent des difficultés à maintenir un contrôle total sur la côte swahilie. Le nombre limité de colons et de soldats, les alliances locales et la résistance des sociétés côtières montrent la nature instable de l’empire portugais en Afrique de l’Est. Les forteresses restent avant tout des points de commerce et des bases militaires temporaires, et non des colonies massives.
+<h3 id="Une-Présence-Portugaise-Nuancée">Une Présence Portugaise Nuancée</h3>
+L’historiographie de la présence portugaise sur la côte swahili a longtemps oscillé entre des visions caricaturales et une analyse plus nuancée de leur impact. Si certains historiens attribuent le déclin de la côte swahilie aux Portugais, il est essentiel de comprendre que les sociétés africaines ont su résister, se reconfigurer et maintenir des réseaux commerciaux qui les ont protégées de la domination portugaise
+<h3 id="La-stratégie-portugaise">La stratégie portugaise : menace militaire et exploitation des rivalités locales</h3>
+L’occupation des villes de la côte repose à la fois sur l’intimidation militaire, les négociations et l’insertion des Portugais dans les intrigues politiques locales. En effet, ils utilisent leur supériorité militaire, notamment leur artillerie (canons, bombardements, débarquements), ainsi que les armes à feu, pour menacer et intimider. Cependant, ils exploitent également les rivalités politiques entre les cités-états swahili, comme entre Mombasa et Malindi.
+Au moment où les Portugais arrivent à Mombasa, cette ville est la plus puissante et étendue, tandis que Malindi, en rivalité avec Mombasa pour le contrôle des territoires côtiers, est dans l’ombre de sa grande concurrente. Ces villes sont fréquemment en guerre à cause de rivalités commerciales et politiques. Les Portugais profitent aussi des rivalités internes au sein de ces cités-états, puisque le pouvoir dans le monde swahili est relativement faible et souvent fragmenté. Les cités fonctionnent selon des monarchies électives, et le pouvoir du sultan est limité par un conseil composé de chefs de familles et d’élites avec lesquels il doit négocier. Le pouvoir repose en grande partie sur la richesse et l’accumulation de biens ; ainsi, lorsqu’un autre homme devient plus riche que le sultan, une concurrence peut apparaître.
+Les Portugais, cherchant à dominer les réseaux commerciaux maritimes, établissent des forteresses et des garnisons satellites comme à Sofala. Ces installations leur permettent de protéger leurs navires et de se défendre contre les ennemis venus par la mer, qu’ils soient Ottomans ou Yéménites. De manière générale, seuls les navires alliés ou soumis au Portugal peuvent circuler librement dans l’océan Indien.
+Le roi du Portugal se considère suzerain de l’ensemble des États d’Asie et d’Afrique, bien que cette allégeance soit superficielle. Il ne s’agit pas d’éliminer les pouvoirs locaux, mais de se protéger contre les ennemis de l’empire. Contrôler ces espaces permet de réduire la concurrence, sans pour autant éliminer les pouvoirs musulmans ou hindouistes, sauf en cas de conflits récurrents. Dans un premier temps, l’or est l’objectif principal des Portugais, car il leur permet d’acheter des épices en Inde, un produit très lucratif pour les Européens, qui ne possèdent pas grand-chose à vendre en Asie. Cependant, ils comprennent rapidement que l'ivoire est également très prisé sur les marchés chinois et indien. Ils échangent alors des produits comme l'ambre gris, les carapaces de tortue marine et des esclaves en direction de l'Afrique, tandis qu’ils importent des tissus indiens. Les Portugais s’insèrent dans des réseaux commerciaux préexistants, mais leur objectif principal est de contrôler les routes maritimes.
+Les Portugais adoptent la même stratégie entre le Japon et la Chine, en acheminant de l’argent en Chine et des produits chinois au Japon, tout en envoyant les épices des Moluques en Chine
+<h3 id="Les-limites-d-une-domination">Les limites d’une domination : peut-on parler d’un déclin de la culture swahili ?</h3>
+La domination portugaise a des conséquences sur la côte est-africaine, mais ces effets doivent être nuancés. Tout d'abord, les forteresses portugaises étaient peu habitées et les garnisons restaient limitées. En ce qui concerne la propagation du christianisme, elle reste modeste, l’islam dominant toujours la côte malgré la présence de missionnaires, notamment dominicains au sud (Mozambique) et augustins au nord (Mombasa). À Mombasa, une chapelle et une mission étaient gérées par quelques frères augustins.
+Les Portugais ont besoin des musulmans, des hindouistes et des Indiens en Inde, dans le golfe Persique et avec les Swahilis pour mener leurs activités commerciales, notamment pour obtenir de l'ivoire. Ils ne vont pas eux-mêmes chasser les éléphants, mais plutôt s’intégrer dans les réseaux commerciaux existants, gérés en grande partie par des musulmans ou des Indiens.
+Les réseaux commerciaux swahilis restent actifs. En effet, les Portugais ne maîtrisent pas entièrement le trafic, notamment avec le Proche-Orient, qui continue grâce aux marchands arabes venant du Yémen et d’Oman. Ces marchands, souvent soufis et à la tête de confréries soufies (branche mystique de l'islam), se déplacent et commercent malgré les interdictions portugaises, implantant notamment leurs réseaux aux Comores et à Mogadiscio. L’implantation du soufisme et les évolutions de l’islam swahili témoignent de la vitalité de ces réseaux.
+L'exemple le plus marquant est celui de l’archipel de Lamu. À la fin du XVIe siècle, bien que cette région soit sous contrôle portugais, elle continue d’entretenir des relations commerciales actives avec le Yémen. Les commerçants arabes préfèrent naviguer vers des ports non sous domination portugaise, comme Lamu, où il n’y a pas de douanes, contrairement à Mombasa. En 1635, une douane est créée à Paté, qui devient de plus en plus prospère grâce à son commerce avec les Portugais, l’Arabie du Sud, et l’arrière-pays
+<h3 id="La-chute-de-l-empire-portugais-sur-la-côte-est-africaine">La chute de l’empire portugais sur la côte est africaine</h3>
+Au XVIIe siècle, la situation devient de plus en plus difficile pour les Portugais. Si leur présence reste forte dans la région du Mozambique, la situation est plus complexe au nord de la côte. En 1614, le sultan de Malindi, après avoir pris Mombasa, la donne aux Portugais et établit sa cour à Mombasa. Cependant, en 1631, ce sultan, converti au christianisme et baptisé sous le nom de Don Jeronimo, apostasie et retourne à l’islam. Il tue le gouverneur portugais, massacre les soldats portugais et, avec l’aide de ses alliés, quitte Mombasa pour faire carrière dans la piraterie.
+La présence portugaise à Mombasa se fragilise, et en 1698, une alliance entre Paté et Oman chasse les Portugais de la côte nord. Ce déclin s'explique par des difficultés administratives croissantes et des révoltes locales. La colonisation portugaise du XVIe siècle ne doit pas être confondue avec celle du XIXe siècle, car elle n’a pas les mêmes racines économiques, et ne repose pas sur les avancées technologiques de la révolution industrielle. La colonisation portugaise reste avant tout un projet militaire et commercial, et la domination sur la côte est africaine reste limitée.
+Cette version met en évidence les différentes facettes de l'expansion portugaise et les limites de leur influence, tout en soulignant la résilience et la continuité des réseaux commerciaux et culturels locaux.
+    </p>
+
+    <h2 id="Zimbabwe">Histoire et Puissance du Zimbabwe</h2>
+    <p>"Zimbabwe" en shona signifie « maison en pierre » ou « résidence royale ». Ces sites appartiennent à une culture que les historiens appellent la « culture Zimbabwe », qui apparaît autour de l’an 1000 dans la vallée du Zambèze.
+        On observe la présence de royaumes et de formes de cités-états, donnant naissance à la culture Zimbabwe.
+        <h3 id="L-essor-des-échanges-et-l-apparition-de-foyers-concentrant-population-et-pouvoir">L’essor des échanges et l’apparition de foyers concentrant population et pouvoir (VIIe-XIIe siècle)</h3>
+        Les premiers sites, témoignant des premiers échanges à longue distance, apparaissent entre 600 et 1200. Par l'archéologie, on observe que dès 600, des traces d'échanges entre la côte actuelle du Mozambique et l’intérieur du pays sont identifiées : des coquillages (cauris) et des verreries sont retrouvés. Cela marque le début de l’échange entre la côte et l’intérieur, bien avant l’arrivée de l’islam.
+Les échanges s’accélèrent au fil du temps, en lien avec le commerce de l’or dont l’extraction commence au IXe siècle. Il s'agit d'une ruée vers l’or à cette période. L’or se trouve en surface, et il n’y a pas de mines ; c’est une production artisanale réalisée dans les carrières et les puits, surtout durant la saison sèche. On trouve également de l’ivoire dans la région, et des traces d’artisanat d’ivoire. Les textes arabes et persans du Xe et XIe siècle mentionnent la région de Sofala et l’or, ainsi que des esclaves, bien qu’il n’y ait pas de traces archéologiques de la traite.
+Les produits importés, tels que les perles, sont des indicateurs importants des échanges à longue distance. Ces perles, provenant principalement du bassin de l’océan Indien, de l’Égypte et de l’Inde, témoignent de ce commerce. Des études chimiques ont permis d’étudier leur provenance. On retrouve ces perles non seulement sur la côte, mais aussi à l’intérieur du pays, jusqu’à l’est du Botswana, ainsi que des coquillages (cauris). On retrouve aussi des traces de textiles, bien que ces derniers disparaissent avec le temps.
+<h3 id="Le-site-de-Mapungubwe">Le site de Mapungubwe : Afrique du Sud (XIIe-XIIIe siècle) - Apparition d’une stratification sociale marquée</h3>
+Mapungubwe, situé à l’extrême nord de l’Afrique du Sud, à environ 600 km de la côte, est occupé entre 1220 et 1300. C’est un centre de pouvoir et de commerce de quelques milliers d’habitants. Ce site n’est pas le seul prospère de la région ; d’autres sites ont été découverts avec des perles, des habitats et des céramiques.
+Mapungubwe se compose d’une colline et d’une zone d’habitat située au pied de celle-ci, avec des maisons en bois et en terre. Ce type de construction est typique de la région, avec des huttes rondes. La colline était probablement occupée par des élites politiques et/ou sacrées, car il n’y a pas d’intérêt à y habiter autrement : c’est une région aride et venteuse, sans fortifications. On y a trouvé des traces d'habitations en pierre sèche, peut-être un palais.
+Des tombes ont été retrouvées sur le site (27 tombes), marquant une stratification sociale très marquée. Les individus enterrés étaient accompagnés de nombreux objets luxueux, comme des bracelets et des perles en or, des rhinocéros en or et des céramiques. Cela montre que ces élites avaient un rôle divinisé, ou un lien avec des puissances spirituelles.
+<h3 id="Le-site-de-Grand-Zimbabwe">Le site de Grand Zimbabwe : capitale monumentale d’un royaume de l’intérieur (XIIIe-XVe siècle)</h3>
+Le Grand Zimbabwe est un site monumental complexe, occupé à partir du milieu du XIIe siècle, mais surtout à partir de la seconde moitié du XIIIe siècle, période d’essor des échanges globaux, comme les voyages de Marco Polo et la Pax Mongolica (1271).
+Le Grand Zimbabwe est une ville avec des maisons rondes, et son habitat était dispersé. Longtemps, on a estimé qu’elle comptait entre 15 000 et 20 000 habitants, mais des recherches récentes suggèrent plutôt une population de 4 000 à 5 000 habitants. Le site comprend un complexe monumental en pierre, dont le plus ancien est le complexe sur la colline, construit au XIVe siècle, une période marquée par des échanges commerciaux mondiaux.
+Le complexe sur la colline, constitué de pierres granitiques, présente des enclos rituels, des objets de luxe importés et des monolithes. Ces monolithes représentent des ancêtres et sont associés à un culte des ancêtres. Le site est aussi célèbre pour son enclos principal, construit au XIVe siècle, qui mesure 240 mètres de circonférence et comprend des structures comme des huttes et des plateformes.
+<h3 id="Les-connexions-très-lointaines-du-Grand-Zimbabwe">Les connexions très lointaines du Grand Zimbabwe : la théière chinoise</h3>
+Le Grand Zimbabwe témoigne de connexions commerciales lointaines. Sur le site, on a retrouvé une théière en jade, typique de la Chine, ainsi que des matériaux importés, tels que des perles en verre provenant de l’océan Indien, des tessons de céramique chinoise, du Moyen-Orient, et de la porcelaine chinoise bleu et blanc. Cela montre que les élites de ce royaume avaient accès à ces produits de luxe grâce à leur rôle dans le commerce de l’or et d’autres ressources rares.
+<h3 id="La-résidence-d-élites-aux-fonctions-politico-rituelles">La résidence d’élites aux fonctions politico-rituelles</h3>
+Il est indéniable que le Grand Zimbabwe était la capitale d’un royaume influent de la région. Bien que nous ne sachions pas exactement comment était organisé ce royaume, il est probable que les enclos servaient des fonctions politiques et rituelles. Ces enclos rappellent ceux des royaumes bantous, comme celui du Kongo, dans la région des Grands Lacs. Ils étaient peut-être utilisés pour interagir avec des forces surnaturelles, incarnées par les ancêtres royaux divinisés.
+Le site de Grand Zimbabwe a commencé à décliner à la fin du XVe siècle, en raison de la concurrence d’autres États plus au nord et à l’ouest, ainsi que d’une réorientation des routes commerciales. Une surexploitation des ressources pourrait aussi avoir contribué à la baisse de la fertilité des sols
+<h3 id="L-essor-du-royaume-de-Monomotapa-:-Mutapa">L’essor du royaume de Monomotapa : Mutapa</h3>
+À la fin du XVe siècle, le Grand Zimbabwe est remplacé par le royaume de Monomotapa, connu aussi sous le nom de Mutapa. Ce royaume, plus au nord, se situe près du fleuve Zambèze. Sa réorientation des routes commerciales vers le nord et ses ressources, notamment en or, en font un royaume puissant, bien connu des Portugais. Toutefois, les voyageurs portugais exagèrent son étendue et son centralisme, la réalité étant probablement moins centralisée que ce qu’ils imaginaient.
+Au milieu du XVIe siècle, après l’assassinat d’un ambassadeur portugais, le royaume de Monomotapa se retrouve confronté à des expéditions portugaises en 1569. Ces expéditions échouent misérablement, en raison de maladies locales et des difficultés de pénétration à l’intérieur du pays. Finalement, les Portugais sont contraints de négocier et de payer un tribut au royaume de Monomotapa, en échange de leur accès commercial. Cette relation de vassalité dure jusqu’aux années 1630.
+    </p>
+
+    <h2 id="Bonus">Bonus</h2>
+    <div class="video-container">
+    <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/FeJ6Jl8Ltx0" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+</div>
+
+    <h2 id="Bibliographie">Bibliographie</h2>
+    
+    <p><div class="csl-bib-body" style="line-height: 2; padding-left: 1em; text-indent:-1em;">
+        <div class="csl-entry"><i>- 06 | 2015 L&#x2019;Afrique Orientale et l&#x2019;oc&#xE9;an Indien&#x202F;: Connexions, R&#xE9;seaux d&#x2019;&#xE9;changes et Globalisation</i>. https://journals.openedition.org/afriques/1719. Accessed 20 Nov. 2024.</div>
+        <div class="csl-entry"><i>- 2021_FREMEAUX_Sofala.Pdf</i>. https://dumas.ccsd.cnrs.fr/dumas-03414159/file/2021_FREMEAUX_Sofala.pdf. Accessed 20 Nov. 2024.</div>
+        <div class="csl-entry"><i>- Axe I&#x202F;: L&#x2019;Afrique et l&#x2019;oc&#xE9;an Indien Entre Les XIe et XVIIe Si&#xE8;cles | GLOBAFRICA</i>. https://globafrica.hypotheses.org/axe-1. Accessed 20 Nov. 2024.</div>
+        <div class="csl-entry"><i>- Commerce Maritime et Islamisation Dans l&#x2019;oc&#xE9;an Indien&#xA0;: Les Premi&#xE8;res Mosqu&#xE9;es Swahilies (Xie-Xiiie Si&#xE8;cles)</i>. https://web.archive.org/web/20220325113544id_/https://journals.openedition.org/remmm/7446. Accessed 20 Nov. 2024.</div>
+        <div class="csl-entry">- Fr&#xE9;meaux, Jules. <i>L&#x2019;implantation Portugaise Au D&#xE9;but Du XVIe Si&#xE8;cle et Le Rapport de La Mission Roads to Sofala(s) de 2018</i>.</div>
+        <div class="csl-entry"><i>- La &#xAB;&#xA0;Nation Portugaise&#xA0;&#xBB; Du Sud-Est Africain &#xE0; La Fin Du Xvie et Au D&#xE9;but Du Xviie Si&#xE8;cle&#xA0;: Entre Diaspora et M&#xE9;tissage | Cairn.Info</i>. https://shs.cairn.info/revue-hypotheses-2005-1-page-157?lang=fr. Accessed 20 Nov. 2024.</div>
+        <div class="csl-entry"><i>- La Soci&#xE9;t&#xE9; Swahilie Au C&#x153;ur Du Grand Commerce Africain | Cairn.Info</i>. https://shs.cairn.info/une-histoire-du-monde-global--9782361060299-page-32?lang=fr. Accessed 20 Nov. 2024.</div>
+        <div class="csl-entry"><i>- L&#x2019;Afrique de l&#x2019;Est et Les R&#xE9;seaux d&#x2019;&#xE9;changes Oc&#xE9;aniques Entre Les Ier et XVe&#xA0;Si&#xE8;cles</i>. https://journals.openedition.org/afriques/1996. Accessed 20 Nov. 2024.</div>
+        <div class="csl-entry"><i>- L&#x2019;Afrique et l&#x2019;oc&#xE9;an Indien&#xA0;: R&#xE9;seaux d&#x2019;&#xE9;changes et Globalisation (2e&#xA0;Mill&#xE9;naire Av.&#xA0;J.-C.-XIXe&#xA0;Si&#xE8;cle)</i>. https://journals.openedition.org/afriques/1471. Accessed 20 Nov. 2024.</div>
+        <div class="csl-entry"><i>- Le 16e Si&#xE8;cle Portugais Dans l&#x2019;oc&#xE9;an Indien&#x202F;: Une &#xC9;conomie de La Capture (1) | Histoire Globale</i>. https://blogs.histoireglobale.com/le-16e-siecle-portugais-dans-locean-indien-une-economie-de-la-capture_3066. Accessed 20 Nov. 2024.</div>
+        <div class="csl-entry">- Le Guennec-Coppens, Fran&#xE7;oise. <i>Les Swahili&#x202F;: une singularit&#xE9; anthropologique en Afrique de l&#x2019;Est</i>. 2002, https://doi.org/10.3406/jafr.2002.1306.</div>
+        <div class="csl-entry"><i>- Le Territoire Hors Les Murs Des Cit&#xE9;s-&#xC9;tats Swahili de l&#x2019;archipel de Lamu, 1600-1800</i>. https://web.archive.org/web/20210407230310id_/https://journals.openedition.org/africanistes/470. Accessed 20 Nov. 2024.</div>
+        <div class="csl-entry"><i>- Les Contacts Entre l&#x2019;Arabie, Le Golfe Persique, l&#x2019;Afrique Orientale et Madagascar&#x202F;: Confrontation Des Documents &#xC9;crits, Des Traditions Orales et Des Donn&#xE9;es Arch&#xE9;ologiques R&#xE9;centes - Pers&#xE9;e</i>. https://www.persee.fr/doc/mom_0766-0510_1988_sem_16_1_2099. Accessed 20 Nov. 2024.</div>
+        <div class="csl-entry"><i>- Les Portugais En Afrique Orientale - Encyclop&#xE9;die de l&#x2019;Histoire Du Monde</i>. https://www.worldhistory.org/trans/fr/2-1798/les-portugais-en-afrique-orientale/. Accessed 20 Nov. 2024.</div>
+        <div class="csl-entry">- Pabiou-Duchamp, Florence. &#x201C;Chapitre 7. Traite et esclavage dans le Sud-Est africain au tournant du XVIe si&#xE8;cle.&#x201D; <i>Traites et esclavages en Afrique orientale et dans l&#x2019;oc&#xE9;an Indien</i>, Karthala, 2013, pp. 223&#x2013;44, https://doi.org/10.3917/kart.medar.2013.01.0223.</div>
+        <div class="csl-entry">- &#x201C;&#xCA;tre femme de rois karanga &#xE0; la fin du XVIe et au d&#xE9;but du XVIIe si&#xE8;cle.&#x201D; <i>Lusotopie. Recherches politiques internationales sur les espaces issus de l&#x2019;histoire et de la colonisation portugaises</i>, no. XII(1-2), Nov. 2005, pp. 93&#x2013;107, https://doi.org/10.1163/17683084-0120102008.</div>
+        <div class="csl-entry"><i>- THESES (31) DOCTEUR DE L&#x2019;UNIVERSITE PARIS I (2)-1.Pdf</i>. https://shs.hal.science/tel-01243399/file/THESES%20(31)%20DOCTEUR%20DE%20L%27UNIVERSITE%20PARIS%20I%20(2)-1.pdf. Accessed 20 Nov. 2024.</div>
+        <div class="csl-entry"><i>- Un Oc&#xE9;an s&#x2019;impose&#xA0;: L&#x2019;oc&#xE9;an Indien Ancien Du VIIe&#xA0;Au XVe&#xA0;Si&#xE8;cle | Cairn.Info</i>. https://shs.cairn.info/revue-outre-mers-2019-1-page-11?lang=fr. Accessed 20 Nov. 2024.</div>
+        <div class="csl-entry">- Vernet, Thomas. <i>LES CITES-ETATS SWAHILI DE L&#x2019;ARCHIPEL DE LAMU, 1585-1810 DYNAMIQUES ENDOGENES, DYNAMIQUES EXOGENES</i>.</div>
+        <div class="csl-entry">- &#x201C;Porosit&#xE9; des fronti&#xE8;res spatiales, ambigu&#xEF;t&#xE9; des fronti&#xE8;res identitaires&#x202F;: le cas des cit&#xE9;s-&#xC9;tats swahili de l&#x2019;archipel de Lamu (vers 1600-1800).&#x201D; <i>Afriques. D&#xE9;bats, m&#xE9;thodes et terrains d&#x2019;histoire</i>, no. 01, Apr. 2010, https://doi.org/10.4000/afriques.513.</div>
+      </div>   
+    </div>
+      </p>
+
+      <button id="backToTop">↑</button>
+
+
+      <footer class="footer">
+        <nav class="navbar">
+            <ul class="navbar-list">
+            <li>
+                <details>
+                <summary>Contacts</summary>
+                <ul>
+                    <li><a href="mailto:histoiredelafriquemedievale@gmail.com?subject=coucou&body=Bonjour%20Monsieur%2C%0AJe%20vous%20prie%20de%20bien%20vouloir%20recevoir%20l%27expression%20de%20mes%20sentiments%20les%20meilleurs%2C">Contactez-nous par mail</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61569280174361" target="_blank">Facebook</a></li>
+                    <li><a href="https://x.com/histoiredelaf" target="_blank">Twitter/X</a></li>
+                    <li><a href="https://www.instagram.com/histoiredelafriquemedievale/" target="_blank">Instagram</a></li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary>Informations légales</summary>
+                <ul>
+                    <li>
+                        <details>
+                            <summary>Mentions légales</summary>
+                            <p>
+                                Éditeur et rédaction : Histoire de l'Afrique médiévale est un média indépendant. Nos coordonnées : Histoire de l'Afrique médiévale, 90 rue de Tolbiac - 75013 Paris, mail : histoiredelafriquemedievale@gmail.com.
+                                Ont contribué aux articles présentés sur ce site : Dame Fall, Joris Hassani
+                            </p>
+                        
+                        
+        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>Politique de confidentialité</summary>
+                            <p>
+                                Les données techniques collectées par Histoire de l'Afrique médiévale le sont au titre de son usage interne. Ces données ne sont ni cédées, ni vendues à des tiers. Conformément à la loi "informatique et libertés" du 6 janvier1978, vous pouvez à tout moment demander à accéder, faire rectifier ou supprimer les informations vous concernant en écrivant à l'adresse suivante : histoiredelafriquemedievale@gmail.com.
+                            </p>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>Licence de ré-exploitation</summary>
+                            <p>
+                                Sauf mention contraire, le contenu de ce site est mis à disposition sous une 
+    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+        licence Creative Commons Attribution 4.0 International (CC BY 4.0)
+    </a>.
+                            
+        </p>
+       
+                        </details>
+                    </li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary>Notre mission</summary>
+                <ul>
+                    <li> Histoire de l'Afrique médiévale a pour mission de collecter, cataloguer, enrichir et communiquer le patrimoine documentaire de l'Afrique. Histoire de l'Afrique médiévale est un magazine en ligne spécialisé sur le thème de l'Histoire destiné aux curieux comme aux experts.</li>
+                   
+                </ul>
+            </details>
+                </li>
+                <li>
+            <details>
+                    <summary>Aide à la navigation</summary>
+                    <ul>
+                        <li> Toutes les sections du site sont accessibles via la touche Tab. </li>
+                        <li>Pour les personnes empêchées une vidéo est disponible en bonus, celle-ci aborde le même récit historique que notre site.</li>
+                    </ul>
+                </details>
+                     </li>
+
+
+    </footer>
+    
+</body>
+</html>
